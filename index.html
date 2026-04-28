@@ -290,8 +290,18 @@ footer{background:#060F1E;padding:32px 40px;display:flex;justify-content:space-b
 <!-- NAV -->
 <nav id="nav">
   <a href="javascript:void(0)" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="nav-logo">
-    <div class="nav-logo-icon">
-      <svg viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+    <div class="nav-logo-icon" style="background:transparent;border-radius:5px;overflow:hidden;padding:0">
+      <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:26px;height:26px;display:block">
+        <rect width="26" height="26" fill="#0B1D35"/>
+        <!-- Cross rotated ~22deg clockwise, center at (9, 15) so left arms clip off edge -->
+        <!-- Using a <use> + transform approach: draw a cross shape then rotate it -->
+        <g transform="rotate(22, 9, 15)">
+          <!-- Vertical bar: centered at x=9, full height -->
+          <rect x="5.5" y="-10" width="7" height="46" fill="white"/>
+          <!-- Horizontal bar: centered at y=15, full width -->
+          <rect x="-10" y="11.5" width="46" height="7" fill="white"/>
+        </g>
+      </svg>
     </div>
     TriageAid
   </a>
